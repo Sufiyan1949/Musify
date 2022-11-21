@@ -82,7 +82,7 @@ if (document.title === "Signup - Spotify") {
                             .then(() => {
                                 console.log("Email Sent");
                             });
-                        $.post("https://musify.42web.io/Api%27s/signUpUser.php",
+                        $.post("https://notspotify.000webhostapp.com/Api%27s/signUpUser.php",
                             inputFieldsData,
                             function (data, status) {
                                 location.href = "signin.html";
@@ -114,7 +114,7 @@ if (document.title === "Login - Spotify") {
                 signInWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
                     .then((userCredential) => {
                         if (userCredential.user.emailVerified)
-                            $.post("https://musify.42web.io/Api%27s/signInUser.php",
+                            $.post("https://notspotify.000webhostapp.com/Api%27s/signInUser.php",
                                 inputFieldsData,
                                 function (data, status) {
                                     if (data !== "Login Failed") {

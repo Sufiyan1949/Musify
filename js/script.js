@@ -10,6 +10,7 @@ if (uid != null) {
     document.querySelector('.navBtns').style = 'display: none;';
     document.querySelector('.navUName>h3').textContent = uEmail;
 }
+else document.querySelector('.navUName>h3').style = 'display: none';
 
 /* Session uid & email */
 console.log("uid: " + uid + ", Email: " + uEmail);
@@ -105,7 +106,7 @@ function route(id, i = null) {
         }
         if (id == 'playlist' && i != null) {
             const xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "https://musify.42web.io/Api's/getPlaylistSongs.php?id=" + i.id, true);
+            xhttp.open("POST", "https://notspotify.000webhostapp.com/Api's/getPlaylistSongs.php?id=" + i.id, true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("id=" + i.id);
             xhttp.onreadystatechange = function () {
@@ -113,12 +114,12 @@ function route(id, i = null) {
                     var obj = JSON.parse(this.responseText);
                     if (playList.length != 0) playList = new Array();
                     obj.forEach(element => {
-                        let imgp = element.simgpath.replace("./", "/");
+                        /* let imgp = element.simgpath.replace("./", "/"); */
                         playList.push({
                             id: element.sid,
                             title: element.sname,
                             path: element.spath,
-                            simgpath: "https://musify.42web.io" + imgp,
+                            simgpath: /* "https://musify.42web.io" +  */ simgpath,
                             artist: element.sartist,
                             duration: element.sduration,
                             cid: element.cid,
@@ -173,7 +174,7 @@ function loadPlaylist(id) {
 
 function loadData() {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://musify.42web.io/Api's/getPlaylistForHome.php?id=18", true);
+    xhttp.open("POST", "https://notspotify.000webhostapp.com/Api's/getPlaylistForHome.php?id=18", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 
@@ -181,12 +182,12 @@ function loadData() {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
             obj.forEach(element => {
-                let imgp = element.pimg_path.replace(".", "");
+                /* let imgp = element.pimg_path.replace(".", ""); */
                 homeData.push({
                     id: element.pid,
                     title: element.ptitle,
                     subtitle: element.psubtitle,
-                    img: "https://musify.42web.io" + imgp
+                    img: /* "https://musify.42web.io" + */ element.pimg_path
                 });
             });
         }
@@ -211,17 +212,25 @@ function getSongs(s) {
     }
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://musify.42web.io/Api's/search.php?sname=" + s, true);
+    xhttp.open("POST", "https://notspotify.000webhostapp.com/Api's/search.php?sname=" + s, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("sname=" + s);
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
+            console.log(this.responseText);
             const sDiv = document.querySelector('.songCtnr');
             sDiv.innerHTML = '<h2>Songs</h2>';
-            obj.forEach(element => {
-                let imgp = "https://musify.42web.io" + element.simgpath.replace(".", "");
+            obj.forEach((element, i) => {
+                let imgp = /* "https://musify.42web.io" +  */element.simgpath/* .replace(".", "") */;
+
+                if (i == 0) {
+                    document.querySelector('.topResultCtnr>.cardCtnr>h1').textContent = element.sname;
+                    document.querySelector('.topResultCtnr>.cardCtnr>div>h4').textContent = element.sartist;
+                    document.querySelector('.topResultCtnr>.cardCtnr>img').src = element.imgp;
+                }
+
                 searchSongData.push({
                     sId: element.sid,
                     sName: element.sname,
@@ -253,10 +262,3 @@ function getSongs(s) {
     }
 
 }
-
-/* let audio = new Audio("http://21273.live.streamtheworld.com/LOS40_DANCE.mp3");
-
-let volume = document.querySelector("#volume");
-volume.addEventListener("change", function(e) {
-audio.volume = e.currentTarget.value / 100;
-}) */

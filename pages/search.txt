@@ -48,10 +48,10 @@
     <div class="topResultCtnr">
         <h2>Top result</h2>
         <div class="cardCtnr">
-            <img src="../assets/img/BollyWood Butter.jpg">
-            <h1>As It Was</h1>
+            <img src="../assets/song_art.jpg">
+            <h1>........</h1>
             <div>
-                <h4 class="artist">Artist Name</h4>
+                <h4 class="artist">......</h4>
             </div>
             <div class="play">
                 <img src="../assets/ic_play.svg" alt="">

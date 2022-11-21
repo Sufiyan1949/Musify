@@ -93,7 +93,10 @@ body {
 
 .navLinkTop .logo {
     width: fit-content;
-    height: 40px;
+    height: 70px;
+    width: 220px;
+    margin-left: -20px;
+    fill: white;
 }
 
 .navItem,
@@ -536,6 +539,7 @@ body {
     background-color: #181818;
     border-radius: 30px;
 }
+
 
 /* Top Navbar Start */
 
