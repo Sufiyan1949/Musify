@@ -4,7 +4,7 @@ let searchSongData = new Array();
 const uid = sessionStorage.getItem("uid");
 const uEmail = sessionStorage.getItem("email");
 
-if()
+
 
 /* Session uid & email */
 console.log("uid: " + uid + ", Email: " + uEmail);
