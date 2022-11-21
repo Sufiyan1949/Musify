@@ -1,1 +1,34 @@
-Liked Songs
+<div class="main">
+    <div class="item1">
+        <div class="leftbuttonbd">
+            <button class="buttonbd">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" height="12" width="12" aria-hidden="true"
+                    viewBox="0 0 16 16" id="musiciconbd">
+                    <path
+                        d="M15.724 4.22A4.313 4.313 0 0012.192.814a4.269 4.269 0 00-3.622 1.13.837.837 0 01-1.14 0 4.272 4.272 0 00-6.21 5.855l5.916 7.05a1.128 1.128 0 001.727 0l5.916-7.05a4.228 4.228 0 00.945-3.577z" />
+                </svg>
+            </button>
+        </div>
+        <div class="child">
+            <div class="rightheadingbd">
+                <h2>Playlist</h2>
+                <h1>Liked Songs</h1>
+                <a>UserName</a>
+            </div>
+        </div>
+    </div>
+    <div class="item2">
+        <div class="child2">
+            <div class="comment">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" height="24" width="24" aria-hidden="true"
+                    viewBox="0 0 24 24" id="musicimage">
+                    <path d="M15 4v12.167a3.5 3.5 0 11-3.5-3.5H13V4h2zm-2 10.667h-1.5a1.5 1.5 0 101.5 1.5v-1.5z" />
+                </svg>
+
+                <h1 class="h1">Songs you like will appear here </h1><br>
+                <h3 class="h3">Save songs by tapping the heart icon.</h3><br>
+                <button class="find">Find Songs</button>
+            </div>
+        </div>
+    </div>
+</div>

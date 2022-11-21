@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
   <title>NotSpotify</title>
-  <script src="js/jquery-3.6.0.min.js" ></script>
 </head>
 
 <body>
@@ -38,14 +37,18 @@
           </div>
           <div class="searchbar">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
-                class="Svg-ytk21e-0 eqtHWV search-icon" aria-hidden="true" viewBox="0 0 24 24">
-                <path d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 
+              class="Svg-ytk21e-0 eqtHWV search-icon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 
             7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z" />
             </svg>
             <input type="text" oninput="getSongs(this.value)" placeholder="What do you want to listen to?">
-        </div>
+          </div>
         </div>
 
+
+        <div class="navUName">
+          <h3></h3>
+        </div>
         <div class="navBtns">
           <a style="text-decoration:none;" href="signup.html">
             <button>
@@ -94,11 +97,11 @@
 
       <!-- Mobile player Start -->
       <div class="mobPlayer">
-        <div class="mobSongDetails">
-          <img src="assets/song_art.jpg" alt="song art">
+        <div class="songDetailsCtnr">
+          <img class="sImg" src="assets/song_art.jpg" alt="song art">
           <div class="texts">
-            <h4>Song Tltle</h4>
-            <p>Artist Name</p>
+            <h4 class="sTitle">......</h4>
+            <p class="sArtist">......</p>
           </div>
         </div>
         <div class="mobRightBtns">
@@ -111,7 +114,7 @@
           </button>
           <!-- <img src="assets/ic_play.svg" alt="playPauseBtn" class="playPauseBtn" id="mobppImg"> -->
           <div class="playPauseBtn">
-            <img src="./assets/ic_play.svg" alt="PlayPause" id="mobppImg">
+            <img class="play_pause" src="./assets/ic_play.svg" alt="PlayPause" id="mobppImg">
           </div>
         </div>
       </div>
@@ -162,16 +165,16 @@
   </div>
   <!-- Parent Div End -->
 
-
   <!-- Player Container Start -->
   <div class="playerCtnr">
+
     <div class="songDetailsCtnr">
-      <img src="./assets/song_art.jpg" alt="Song Art">
+      <img class="sImg" src="./assets/song_art.jpg" alt="Song Art">
       <div class="texts">
-        <h3>Song Title</h3>
-        <p>Artist Name</p>
+        <h3 class="sTitle">......</h3>
+        <p class="sArtist">......</p>
       </div>
-      <button class="playerBtnLike">
+      <!--<button class="playerBtnLike">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="16" width="16"
           viewBox="0 0 16 16" class="Svg-ytk21e-0 eqtHWV">
           <path
@@ -186,40 +189,46 @@
             <path d="M10 8h4v3h-4z" />
           </g>
         </svg>
-      </button>
+      </button>-->
     </div>
+
     <div class="controlerCtnr">
+
       <div class="btnsCtnr">
-        <img src="assets/ic_shuffel.svg" alt="shuffel">
-        <img src="assets/ic_backward.svg" alt="backward">
+        <!--<img class="shuffle" src="assets/ic_shuffel.svg" alt="shuffel">-->
+        <img class="backward" src="assets/ic_backward.svg" alt="backward">
         <div class="playPauseBtn">
-          <img src="assets/ic_play.svg" alt="PlayPause" id="ppImg">
+          <img class="play_pause" src="assets/ic_play.svg" alt="PlayPause" id="ppImg">
         </div>
-        <img src="assets/ic_forward.svg" alt="shuffel">
-        <img src="assets/ic_repeat.svg" alt="backward">
+        <img class="forward" src="assets/ic_forward.svg" alt="forward">
+        <!--<img class="repeat" src="assets/ic_repeat.svg" alt="repeat">-->
       </div>
+
       <div class="progressCtnr">
         <p class="currentTime">00:00</p>
-        <input type="range" min="0" max="100" value="0">
+        <input class="slider" type="range" min="0" max="100" value="0">
         <p class="totalTime">00:00</p>
       </div>
+
     </div>
     <div class="volumeCtnr">
-      <div class="queueBtn">
+      <!--<div class="queueBtn">
         <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" height="16" width="16"
           viewBox="0 0 16 16">
           <path
             d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 013.5 1h9a2.5 2.5 0 010 5h-9A2.5 2.5 0 011 3.5zm2.5-1a1 1 0 000 2h9a1 1 0 100-2h-9z" />
         </svg>
-      </div>
+      </div>-->
       <div class="muteBtn">
-        <img src="assets/volume100.svg" alt="PlayPause">
+        <img class="mute" src="assets/volume100.svg" alt="PlayPause">
       </div>
       <input id="volume" type="range" min="0" max="100" value="100">
     </div>
   </div>
   <!-- Player Container End -->
 
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/player.js"></script>
   <script src="js/script.js"></script>
   <script src="https://kit.fontawesome.com/d4efaf251d.js" crossorigin="anonymous"></script>
 

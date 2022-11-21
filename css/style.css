@@ -332,32 +332,31 @@ body {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.mobPlayer .mobSongDetails,
+.mobPlayer .songDetailsCtnr:nth-child(1),
 .mobPlayer .mobRightBtns {
     display: flex;
 }
 
-.mobPlayer .mobSongDetails .texts {
+.mobPlayer .songDetailsCtnr:nth-child(1) .texts {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 0px 10px;
 }
 
-.mobPlayer .mobSongDetails img {
+.mobPlayer .songDetailsCtnr:nth-child(1) img {
     width: 40px;
     height: 40px;
     border-radius: 6px;
 }
 
-.mobPlayer .mobSongDetails h4 {
+.mobPlayer .songDetailsCtnr:nth-child(1) h4 {
     color: white;
     font-size: 13px;
     font-weight: 500;
 }
 
-.mobPlayer .mobSongDetails p {
+.mobPlayer .songDetailsCtnr:nth-child(1) p {
     font-weight: 300;
     font-size: 12px;
     color: rgba(255, 255, 255, 0.7);
@@ -531,6 +530,12 @@ body {
     margin-right: 10px;
 }
 
+.navUName h3 {
+    color: white;
+    padding: 6px 18px;
+    background-color: #181818;
+    border-radius: 30px;
+}
 
 /* Top Navbar Start */
 
@@ -1045,6 +1050,10 @@ body {
     .navMenu svg {
         fill: white;
         opacity: .90;
+    }
+
+    .navUName {
+        display: none;
     }
 
     /* Top Navbar End */
@@ -1659,3 +1668,194 @@ thead tr:hover {
 
 
 /* Panbihar CSS End */
+
+
+/* Balram Area Starts */
+
+.contentCtnr .main {
+    height: 100vh;
+    width: 100%;
+    margin: -20px -38px -20px -20px;
+    background: linear-gradient(180deg, rgba(83, 59, 160, 1) -40%, rgba(83, 59, 160, 0.7) -10%, rgba(255, 255, 255, 0) 100%);
+}
+
+.contentCtnr .main .item1 {
+    /* background: linear-gradient(#1b0627e5, #540181); */
+    background: linear-gradient(180deg, rgba(83, 59, 160, 1) 0%, rgba(83, 59, 160, 0.7) 76%);
+    width: 100%;
+    display: flex;
+}
+
+.contentCtnr .main .item1 .buttonbd {
+    height: 232px;
+    width: 232px;
+    background: linear-gradient(135deg, rgba(95, 86, 228, 1) 0%, rgba(81, 214, 134, 0.493) 110%);
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 1px 6px 16px #18181883;
+    cursor: pointer;
+    outline: none;
+}
+
+.contentCtnr .main .item1 .buttonbd svg {
+    height: 93px;
+    width: 91px;
+    position: relative;
+    top: 5px;
+    left: 64px;
+    fill: #fefbfb;
+}
+
+.contentCtnr .main .item1 .child {
+    display: flex;
+    flex: content;
+    justify-items: center;
+    align-items: center;
+    left: 10px;
+}
+
+.contentCtnr .main .item1 .rightheadingbd {
+    display: grid;
+    margin-left: 38px;
+    margin-bottom: 31px;
+}
+
+.contentCtnr .main .item1 .rightheadingbd h2 {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.contentCtnr .main .item1 .rightheadingbd h1 {
+    color: #ffffff;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.contentCtnr .main .item1 .rightheadingbd a {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.contentCtnr .main .item2 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.contentCtnr .main .item2 .child2 {
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    background-color: linear-gradient(#1b0627e5, #540181);
+}
+
+.contentCtnr .main .item2 .child2 .comment #musicimage {
+    align-items: center;
+    height: 93px;
+    width: 91px;
+    fill: #fefbfb;
+}
+
+.contentCtnr .main .item2 .child2 .comment .h1 {
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.contentCtnr .main .item2 .child2 .comment .h3 {
+    size: 8px;
+    color: #FFFFFF;
+}
+
+.contentCtnr .main .item2 .child2 .comment .find {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: #000000;
+    border-radius: 24px;
+    height: 48px;
+    border: none;
+    outline: none;
+    width: 145px;
+    padding: 8px, 32px;
+    box-sizing: border-box;
+    transition: all .4s ease;
+}
+
+.contentCtnr .main .item2 .child2 .comment .find:hover {
+    transform: scale(1.04);
+}
+
+
+@media only screen and (max-width: 760px) {
+    .contentCtnr .main {
+        display: block;
+    }
+
+    .contentCtnr .main .item1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .contentCtnr .main .item1 .rightheadingbd h2,
+    .contentCtnr .main .item1 .rightheadingbd a {
+        font-size: 14px;
+    }
+
+    .contentCtnr .main .item1 .rightheadingbd h1 {
+        font-size: 32px;
+    }
+
+   /*  .contentCtnr .main .item2 .child2 .comment #musicimage {
+        align-items: center;
+        height: auto;
+        width: auto;
+        fill: #fefbfb;
+    } */
+
+    .contentCtnr .main .item2 .child2 .comment .h1 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #FFFFFF;
+    }
+
+    .contentCtnr .main .item2 .child2 .comment .h3 {
+        font-size: 16px;
+        color: #FFFFFF;
+    }
+
+    .contentCtnr .main .item2 .child2 .comment .find {
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        color: #000000;
+        transform: matrix(1.04, 0, 0, 1.04, 0, 0);
+        border-top-left-radius: 250px;
+        border-top-right-radius: 250px;
+        border-bottom-left-radius: 250px;
+        border-bottom-right-radius: 250px;
+        height: 48px;
+        width: 143.766px;
+        padding: 8px, 32px;
+        box-sizing: border-box;
+    }
+
+    .contentCtnr .main .item1 .child {
+        display: flex;
+        flex: content;
+        justify-items: flex-start;
+        align-items: flex-end;
+        left: 10px;
+        width: 100%;
+    }
+}
+
+
+/* Balram area ends */
